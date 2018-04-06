@@ -1,0 +1,96 @@
+.bars {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 24px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.bars .icon-bar {
+    background-color: #fff;
+    border-radius: 1px;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: all .3s ease-in-out;
+    width: 22px;
+}
+
+.bars .icon-bar:nth-of-type(2), 
+.bars .icon-bar:nth-of-type(3) {
+    top: 0;
+}
+
+.bars .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+
+.mobile-links {
+    background-color: #fff;
+    margin: 0;
+    max-height: 0px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all .3s ease;
+}
+
+.mobile-links.toggled {
+    max-height: 300px;
+    padding: 40px;
+}
+
+.mobile-links a {
+    color: #000;
+    display: block;
+}
+
+.mobile-links li {
+    list-style: none;
+}
+
+.nav-primary {
+    background-color: darkgray;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-lg {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .bars {
+        display: none;
+    }
+
+    .links-right a {
+        color: #fff;
+        padding: 0 5px;
+    }
+
+    .nav-lg {
+        display: block;
+    }
+
+    .nav-primary {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav-primary .logo {
+        margin-right: auto;
+    }
+
+    .nav-sm {
+        display: none;
+    }
+}

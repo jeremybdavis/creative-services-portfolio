@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
-)
+class IndexPage extends Component {
+    render() {
+        const data = this.props.data
+
+        return(
+            <div>
+                <div className="hero">
+                    <h1>We Are Creative Services</h1>
+                </div>
+                <div className="section">
+                    <h1>Who We Are</h1>
+                </div>
+            </div>
+        )
+    }
+}
 
 export default IndexPage
