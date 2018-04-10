@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Domine:400,700');
+@import url('https://fonts.googleapis.com/css?family=Domine:400,700|Arimo:400,700');
 .hero {
     align-items: center;
     display: flex;
     justify-content: center;
 
     height: 600px;
-    position: absolute;
+    position: relative;
     top: 0;
 }
 
@@ -23,8 +23,31 @@
     object-fit: cover;
 }
 
+.section {
+    font-family: 'Arimo', sans-serif;
+    padding: 40px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #e05929;
+    font-family: 'Domine', serif;
+}
+
 @media (min-width: 768px) {
     .hero h1 {
         font-size: 62px;
+    }
+
+    .section {
+        padding: 60px;
+    }
+}
+
+@media (min-width: 988px) {
+    .who-we-are .content {
+        margin: 0 auto;
+        max-width: 600px;
+        width: 80%;
     }
 }
