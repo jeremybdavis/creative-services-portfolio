@@ -23,6 +23,11 @@
     object-fit: cover;
 }
 
+.latest-work {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .section {
     font-family: 'Arimo', sans-serif;
     padding: 40px;
@@ -35,8 +40,20 @@
 }
 
 @media (min-width: 768px) {
+    .case-study {
+        flex-basis: 33%;
+    }
+
+    .case-study:nth-child(2) {
+        padding: 0 20px;
+    }
+
     .hero h1 {
         font-size: 62px;
+    }
+
+    .latest-work {
+        flex-wrap: nowrap;
     }
 
     .section {

@@ -6,6 +6,7 @@ class IndexPage extends Component {
     render() {
         const data = this.props.data
         const acfFields = data.wordpressAcfPages.acf
+        const caseStudies = data.allWordpressWpCaseStudy
 
         return(
             <div>
@@ -23,6 +24,16 @@ class IndexPage extends Component {
 
                 <div className="section" style={{backgroundColor: '#ede9e6'}}>
                     <h2>{acfFields.home_portfolio_headline}</h2>
+                    <div className="latest-work">
+                        {caseStudies.edges.slice(0, 3).map(({node}) => (
+                            <div key={node.slug} className="case-study">
+                                <Link to={node.slug}>
+                                    <img src={node.featured_media.source_url} alt={node.title}/>
+                                    <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         )
@@ -43,6 +54,20 @@ export const homePageQuery = graphql`
         home_about_content
         home_portfolio_headline
       }
+    }
+
+    allWordpressWpCaseStudy{
+        edges{
+            node{
+                id
+                title
+                slug
+                date(formatString: "MMMM DD, YYYY")
+                featured_media{
+                    source_url
+                }
+            }
+        }
     }
   }
 `
