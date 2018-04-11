@@ -12,7 +12,9 @@ class Header extends Component {
         return(
             <nav className="nav-primary">
                 <div className="logo">
-                    <Link to="/">Logo</Link>
+                    <Link to="/">
+                        Logo
+                    </Link>
                 </div>
 
                 <div className="nav-lg">

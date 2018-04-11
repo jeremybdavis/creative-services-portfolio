@@ -25,10 +25,15 @@ class IndexPage extends Component {
                 <div className="section" style={{backgroundColor: '#ede9e6'}}>
                     <h2>{acfFields.home_portfolio_headline}</h2>
                     <div className="latest-work">
-                        {caseStudies.edges.slice(0, 3).map(({node}) => (
+                        {caseStudies.edges.slice(-3).reverse().map(({node}) => (
                             <div key={node.slug} className="case-study">
                                 <Link to={node.slug}>
-                                    <img src={node.featured_media.source_url} alt={node.title}/>
+                                    <div className="cs-img">
+                                        <img src={node.featured_media.source_url} alt={node.title}/>
+                                        <div className="cs-hover">
+                                            <span>View Project</span>
+                                        </div>
+                                    </div>
                                     <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
                                 </Link>
                             </div>

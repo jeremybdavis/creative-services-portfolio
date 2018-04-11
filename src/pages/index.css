@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Domine:400,700|Arimo:400,700');
+.case-study a {
+    color: #001641;
+    display: block;
+}
+
+.case-study h3,
+.section {
+    font-family: 'Arimo', sans-serif;
+}
+
+.cs-img {
+    position: relative;
+}
+
 .hero {
     align-items: center;
     display: flex;
@@ -29,7 +43,6 @@
 }
 
 .section {
-    font-family: 'Arimo', sans-serif;
     padding: 40px;
     text-align: center;
 }
@@ -37,15 +50,54 @@
 .section h2 {
     color: #e05929;
     font-family: 'Domine', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
     .case-study {
         flex-basis: 33%;
+        padding: 0 10px;
     }
 
-    .case-study:nth-child(2) {
-        padding: 0 20px;
+    .case-study h3 {
+        transition: all .3s ease-in-out;
+    }
+
+    .cs-hover {
+        background-color: #000;
+        color: #fff;
+        opacity: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        transition: all .3s ease-in-out;
+    }
+
+    .cs-img {
+        height: 160px;
+        margin-bottom: 20px;
+    }
+
+    .case-study a:hover .cs-hover {
+        opacity: .7;
+    }
+
+    .case-study a:hover h3 {
+        opacity: .5;
+    }
+
+    .cs-img img {
+        height: 100%;
+        object-fit: cover;
     }
 
     .hero h1 {
@@ -54,6 +106,7 @@
 
     .latest-work {
         flex-wrap: nowrap;
+        justify-content: center;
     }
 
     .section {
@@ -62,9 +115,39 @@
 }
 
 @media (min-width: 988px) {
+    .cs-hover span {
+        font-size: 22px;
+    }
+
+    .cs-img {
+        height: 220px;
+    }
+
     .who-we-are .content {
         margin: 0 auto;
         max-width: 600px;
         width: 80%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cs-img {
+        height: 260px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .case-study {
+        padding: 0 15px;
+    }
+
+    .cs-img {
+        height: 300px;
+    }
+
+    .latest-work {
+        margin: 0 auto;
+        max-width: 1400px;
     }
 }
