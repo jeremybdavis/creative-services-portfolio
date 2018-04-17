@@ -22,7 +22,7 @@ class Header extends Component {
                         <Link to="/about">About</Link>
                         <Link to="/what-we-do">What We Do</Link>
                         <Link to="/use-case">Use Case</Link>
-                        <Link to="/posts">Blog</Link>
+                        <Link to="/blog/">Blog</Link>
                         <Link to="/contact">Contact</Link>
                     </div>
                 </div>
