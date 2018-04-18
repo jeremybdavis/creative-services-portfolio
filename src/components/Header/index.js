@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import './header.css'
+import logo from './logo.png';
 
 class Header extends Component {
     navToggle() {
@@ -13,7 +14,7 @@ class Header extends Component {
             <nav className="nav-primary">
                 <div className="logo">
                     <Link to="/">
-                        Logo
+                        <img src={logo} alt="Logo"/>
                     </Link>
                 </div>
 

@@ -29,6 +29,16 @@
     margin-top: 4px;
 }
 
+.logo,
+.logo a,
+.logo img {
+    height: 100%;
+}
+
+.logo a {
+    display: block;
+}
+
 .mobile-links {
     background-color: #fff;
     margin: 0;
@@ -60,7 +70,8 @@
 .nav-primary {
     background-color: transparent;
     font-family: 'Arimo', sans-serif;
-    padding: 20px;
+    height: 60px;
+    padding: 0 20px;
     position: absolute;
     text-transform: uppercase;
     width: 100%;
@@ -95,7 +106,9 @@
     }
 
     .nav-primary {
+        align-items: center;
         display: flex;
+        height: 80px;
         justify-content: flex-end;
     }
 

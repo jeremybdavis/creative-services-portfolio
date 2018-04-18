@@ -27,11 +27,11 @@ class IndexPage extends Component {
                     <h2>{acfFields.home_portfolio_headline}</h2>
                     <div className="latest-work">
                         {caseStudies.edges.slice(-3).reverse().map(({node}) => (
-                            <div key={node.slug} className="case-study">
+                            <div key={node.slug} className="post">
                                 <Link to={node.slug}>
-                                    <div className="cs-img">
+                                    <div className="post-img">
                                         <img src={node.featured_media.source_url} alt={node.title}/>
-                                        <div className="cs-hover">
+                                        <div className="post-hover">
                                             <span>View Project</span>
                                         </div>
                                     </div>
@@ -50,15 +50,18 @@ class IndexPage extends Component {
                                 <Link to={`/blog/${node.slug}/`}>
                                     <div className="post-img">
                                         <img src={node.featured_media.source_url} alt={node.title}/>
-                                        <div className="cs-hover">
+                                        <div className="post-hover">
                                             <span>View Post</span>
                                         </div>
                                     </div>
                                     <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
                                 </Link>
+                                <p dangerouslySetInnerHTML={{__html: node.excerpt}}></p>
+                                <Link to={`/blog/${node.slug}/`} className="view-post">View Post</Link>
                             </div>
                         ))}
                     </div>
+                    <Link to="/blog/" className="btn">View More</Link>
                 </div>
             </div>
         )

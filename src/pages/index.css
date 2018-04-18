@@ -1,15 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Domine:400,700|Arimo:400,700');
-.case-study a {
+
+.btn {
+    background-color: #e05929;
+    color: #fff;
+    padding: 15px 30px;
+    transition: all .3s ease-in-out;
+}
+
+.post a {
     color: #001641;
     display: block;
 }
 
-.case-study h3,
+.post h3,
 .section {
     font-family: 'Arimo', sans-serif;
 }
 
-.cs-img {
+.post-img {
     position: relative;
 }
 
@@ -37,9 +45,22 @@
     object-fit: cover;
 }
 
+.home-blog,
 .latest-work {
     display: flex;
     flex-wrap: wrap;
+}
+
+.home-blog .post {
+    margin-bottom: 30px;
+}
+
+.link-more {
+    display: none;
+}
+
+.post-hover {
+    display: none;
 }
 
 .section {
@@ -55,17 +76,37 @@
     margin-bottom: 40px;
 }
 
+.view-post {
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all .3s ease-in-out;
+}
+
 @media (min-width: 768px) {
-    .case-study {
+    .btn:hover {
+        background-color: rgba(224, 89, 41, 0.8);
+    }
+
+    .home-blog .post {
+        border: 2px solid #ede9e6;
+        margin-bottom: 0;
+        padding: 15px;
+    }
+
+    .home-blog .post:nth-child(2) {
+        margin: 0 15px;
+    }
+
+    .post {
         flex-basis: 33%;
         padding: 0 10px;
     }
 
-    .case-study h3 {
+    .post h3 {
         transition: all .3s ease-in-out;
     }
 
-    .cs-hover {
+    .post-hover {
         background-color: #000;
         color: #fff;
         opacity: 0;
@@ -82,20 +123,20 @@
         transition: all .3s ease-in-out;
     }
 
-    .cs-img {
+    .post-img {
         height: 160px;
         margin-bottom: 20px;
     }
 
-    .case-study a:hover .cs-hover {
+    .post a:hover .post-hover {
         opacity: .7;
     }
 
-    .case-study a:hover h3 {
+    .post a:hover h3 {
         opacity: .5;
     }
 
-    .cs-img img {
+    .post-img img {
         height: 100%;
         object-fit: cover;
     }
@@ -104,6 +145,7 @@
         font-size: 62px;
     }
 
+    .home-blog,
     .latest-work {
         flex-wrap: nowrap;
         justify-content: center;
@@ -112,14 +154,18 @@
     .section {
         padding: 60px;
     }
+
+    .view-post:hover {
+        opacity: .6;
+    }
 }
 
 @media (min-width: 988px) {
-    .cs-hover span {
+    .post-hover span {
         font-size: 22px;
     }
 
-    .cs-img {
+    .post-img {
         height: 220px;
     }
 
@@ -131,23 +177,24 @@
 }
 
 @media (min-width: 1200px) {
-    .cs-img {
+    .post-img {
         height: 260px;
         margin-bottom: 40px;
     }
 }
 
 @media (min-width: 1400px) {
-    .case-study {
+    .post {
         padding: 0 15px;
     }
 
-    .cs-img {
+    .post-img {
         height: 300px;
     }
 
+    .home-blog,
     .latest-work {
-        margin: 0 auto;
+        margin: 0 auto 60px;
         max-width: 1400px;
     }
 }
