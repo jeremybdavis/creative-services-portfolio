@@ -7,6 +7,7 @@ class IndexPage extends Component {
         const data = this.props.data
         const acfFields = data.wordpressAcfPages.acf
         const caseStudies = data.allWordpressWpCaseStudy
+        const posts = data.allWordpressPost
 
         return(
             <div>
@@ -32,6 +33,25 @@ class IndexPage extends Component {
                                         <img src={node.featured_media.source_url} alt={node.title}/>
                                         <div className="cs-hover">
                                             <span>View Project</span>
+                                        </div>
+                                    </div>
+                                    <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="section">
+                    <h2>Blog</h2>
+                    <div className="home-blog">
+                        {posts.edges.slice(0,3).map(({node}) => (
+                            <div key={node.slug} className="post">
+                                <Link to={`/blog/${node.slug}/`}>
+                                    <div className="post-img">
+                                        <img src={node.featured_media.source_url} alt={node.title}/>
+                                        <div className="cs-hover">
+                                            <span>View Post</span>
                                         </div>
                                     </div>
                                     <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
@@ -66,6 +86,21 @@ export const homePageQuery = graphql`
             node{
                 id
                 title
+                slug
+                date(formatString: "MMMM DD, YYYY")
+                featured_media{
+                    source_url
+                }
+            }
+        }
+    }
+
+    allWordpressPost{
+        edges{
+            node{
+                id
+                title
+                excerpt
                 slug
                 date(formatString: "MMMM DD, YYYY")
                 featured_media{
