@@ -46,8 +46,8 @@ class Header extends Component {
                     <ul className="mobile-links">
                         <li><Link to="/about" onClick={this.navToggle}>About</Link></li>
                         <li><Link to="/what-we-do" onClick={this.navToggle}>What We Do</Link></li>
-                        <li><Link to="/use-case" onClick={this.navToggle}>Use Case</Link></li>
-                        <li><Link to="/posts" onClick={this.navToggle}>Blog</Link></li>
+                        <li><Link to="/case-studies" onClick={this.navToggle}>Case Studies</Link></li>
+                        <li><Link to="/blog" onClick={this.navToggle}>Blog</Link></li>
                         <li><Link to="/contact" onClick={this.navToggle}>Contact</Link></li>
                     </ul>
                 </div>

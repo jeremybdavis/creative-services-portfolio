@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
+import './templates.css'
 
 class PostsTemplate extends Component {
     render() {
@@ -8,6 +9,7 @@ class PostsTemplate extends Component {
 
         return(
             <div>
+                <div className="nav-bg"></div>
                 <h1>Posts</h1>
 
                 {data.allWordpressPost.edges.map(({node}) => (

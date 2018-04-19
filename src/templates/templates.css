@@ -1,0 +1,13 @@
+.nav-bg {
+    background-color: #001641;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .nav-bg {
+        height: 80px;
+    }
+}
