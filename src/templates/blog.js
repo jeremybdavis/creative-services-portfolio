@@ -14,18 +14,25 @@ class PostsTemplate extends Component {
                 <h1>Blog</h1>
                 <h3>{acfFields.blog_subheadline}</h3>
 
-                {data.allWordpressPost.edges.map(({node}) => (
-                    <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
-                        <Link to={node.slug}>
-                            <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
-                        </Link>
+                <div className="blog-posts">
+                    {data.allWordpressPost.edges.map(({node}) => (
+                        <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
+                            <Link to={`/blog/${node.slug}/`}>
+                                <div className="post-img">
+                                    <img src={node.featured_media.source_url} alt={node.title}/>
+                                    <div className="post-hover">
+                                        <span>View Post</span>
+                                    </div>
+                                </div>
+                                <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
+                            </Link>
 
-                        <div className={"post-content"} dangerouslySetInnerHTML={{__html: node.excerpt}} />
+                            <p dangerouslySetInnerHTML={{__html: node.excerpt}}></p>
+                            <Link to={`/blog/${node.slug}/`} className="view-post">View Post</Link>
 
-                        {node.date}
-                    </div>
-                ))}
-
+                        </div>
+                    ))}
+                </div>
             </div>
         )
     }
@@ -48,6 +55,9 @@ export const pageQuery = graphql`
                     excerpt
                     slug
                     date(formatString: "MMMM DD, YYYY")
+                    featured_media{
+                        source_url
+                    }
                 }
             }
         }

@@ -28,7 +28,7 @@ class IndexPage extends Component {
                     <div className="latest-work">
                         {caseStudies.edges.slice(-3).reverse().map(({node}) => (
                             <div key={node.slug} className="post">
-                                <Link to={node.slug}>
+                                <Link to={`/portfolio/${node.slug}`}>
                                     <div className="post-img">
                                         <img src={node.featured_media.source_url} alt={node.title}/>
                                         <div className="post-hover">

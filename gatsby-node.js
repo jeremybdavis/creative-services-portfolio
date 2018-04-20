@@ -34,6 +34,20 @@ const postsQuery = `
 }
 `
 
+const portfolioQuery = `
+{
+    allWordpressWpCaseStudy{
+        edges{
+            node{
+                id
+                title
+                slug
+            }
+        }
+    }
+}
+`
+
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators;
@@ -90,6 +104,36 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                         resolve();
                     });
             })
+
+            .then(() => {
+                graphql(portfolioQuery)
+                    .then(result => {
+                        if (result.errors) {
+                            console.log(result.errors);
+                            reject(result.errors);
+                        }
+
+                        const caseStudyTemplate = path.resolve("./src/templates/case-study.js");
+                        const portfolioTemplate = path.resolve("./src/templates/portfolio.js");
+
+                        // Create Portfolio
+                        createPage({
+                            path: `/portfolio/`,
+                            component: slash(portfolioTemplate)
+                        });
+
+                        _.each(result.data.allWordpressWpCaseStudy.edges, edge => {
+                            createPage({
+                                path: `/portfolio/${edge.node.slug}/`,
+                                component: slash(caseStudyTemplate),
+                                context: {
+                                    id: edge.node.id,
+                                },
+                            });
+                        });
+                        resolve();
+                    });
+            });
         // ==== END POSTS ====
     });
 };
