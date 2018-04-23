@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
+import './templates.css'
 
 class PostTemplate extends Component {
   render() {
@@ -8,6 +9,7 @@ class PostTemplate extends Component {
 
     return (
       <div>
+        <div className="nav-bg"></div>
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>

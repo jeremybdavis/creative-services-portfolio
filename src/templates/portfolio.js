@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
+import './templates.css'
 
 class PortfolioTemplate extends Component {
     render() {
@@ -8,11 +9,12 @@ class PortfolioTemplate extends Component {
 
         return(
             <div>
+                <div className="nav-bg"></div>
                 <h1>Portfolio</h1>
 
                 {data.allWordpressWpCaseStudy.edges.map(({node}) => (
                     <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
-                        <Link to={node.slug}>
+                        <Link to={`/portfolio/${node.slug}/`}>
                             <h3>{node.title}</h3>
                         </Link>
 
