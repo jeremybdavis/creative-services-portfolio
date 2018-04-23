@@ -9,11 +9,14 @@ import './index.css'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="HCA Creative Services"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
+        title="HCA Creative Services"
+        htmlAttributes={
+            {lang: 'en'}
+        }
+        meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+        ]}
     />
     <Header />
     <div>
