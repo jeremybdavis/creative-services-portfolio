@@ -9,7 +9,7 @@ module.exports = {
           resolve: "gatsby-source-wordpress",
           options: {
               baseUrl: "hcacs.wpengine.com",
-              protocol: "http",
+              protocol: "https",
               hostingWPCOM: false,
               useACF: true,
               verboseOutput: true
