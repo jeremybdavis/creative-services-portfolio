@@ -24,8 +24,6 @@
 .hero {
     align-items: center;
     display: flex;
-    justify-content: center;
-
     height: 600px;
     position: relative;
     top: 0;
@@ -35,14 +33,17 @@
     color: #fff;
     font-family: 'Domine', serif;
     font-size: 54px;
-    position: absolute;
-    text-align: center;
+    text-align: left;
 }
 
 .hero img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
 }
 
 .home-blog,
@@ -55,12 +56,20 @@
     margin-bottom: 30px;
 }
 
+.latest-work img {
+    margin-bottom: 0;
+}
+
 .link-more {
     display: none;
 }
 
 .post-hover {
     display: none;
+}
+
+.section.case-studies {
+    padding: 40px 0 0;
 }
 
 .section {
@@ -87,6 +96,10 @@
         background-color: rgba(224, 89, 41, 0.8);
     }
 
+    .section.case-studies {
+        padding: 60px 0 0;
+    }
+
     .home-blog .post {
         border: 2px solid #ede9e6;
         margin-bottom: 0;
@@ -98,8 +111,7 @@
     }
 
     .post {
-        flex-basis: 33%;
-        padding: 0 10px;
+        flex-basis: 33.3333%;
     }
 
     .post h3 {
@@ -123,13 +135,17 @@
         transition: all .3s ease-in-out;
     }
 
+    .post-hover span {
+        border: 2px solid #fff;
+        padding: 5px 15px;
+    }
+
     .post-img {
         height: 160px;
-        margin-bottom: 20px;
     }
 
     .post a:hover .post-hover {
-        opacity: .7;
+        opacity: .6;
     }
 
     .post a:hover h3 {
@@ -139,6 +155,7 @@
     .post-img img {
         height: 100%;
         object-fit: cover;
+        width: 100%;
     }
 
     .hero h1 {
@@ -179,22 +196,19 @@
 @media (min-width: 1200px) {
     .post-img {
         height: 260px;
-        margin-bottom: 40px;
     }
 }
 
 @media (min-width: 1400px) {
-    .post {
-        padding: 0 15px;
-    }
-
     .post-img {
         height: 300px;
     }
 
-    .home-blog,
-    .latest-work {
+    .home-blog {
         margin: 0 auto 60px;
-        max-width: 1400px;
+    }
+
+    .latest-work {
+        margin: 0 auto;
     }
 }

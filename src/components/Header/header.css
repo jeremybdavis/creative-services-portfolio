@@ -68,11 +68,11 @@
 }
 
 .nav-primary {
-    background-color: transparent;
+    background-color: #001641;
     font-family: 'Arimo', sans-serif;
     height: 60px;
     padding: 0 20px;
-    position: absolute;
+    position: relative;
     text-transform: uppercase;
     width: 100%;
     z-index: 1;
