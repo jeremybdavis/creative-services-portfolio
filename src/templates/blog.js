@@ -10,13 +10,15 @@ class PostsTemplate extends Component {
 
         return(
             <div className="blog">
-                <div className="nav-bg"></div>
-                <h1>Blog</h1>
-                <h3>{acfFields.blog_subheadline}</h3>
-
-                <div className="blog-posts">
+                <div className="hero">
+                    <div className="hero-content">
+                        <h1>Blog</h1>
+                        <h3>{acfFields.blog_subheadline}</h3>
+                    </div>
+                </div>
+                <div className="blog-posts" style={{backgroundColor: '#ede9e6'}}>
                     {data.allWordpressPost.edges.map(({node}) => (
-                        <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
+                        <div key={node.slug} className={"post"}>
                             <Link to={`/blog/${node.slug}/`}>
                                 <div className="post-img">
                                     <img src={node.featured_media.source_url} alt={node.title}/>

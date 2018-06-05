@@ -5,9 +5,21 @@ class WhatWeDoPage extends Component {
     render() {
 
         return (
-            <div>
-                <div className="nav-bg"></div>
-                <h1>What We Do</h1>
+            <div className="wwd">
+                <div className="hero">
+                    <div className="hero-content">
+                        <h1>What We Do</h1>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div className="services">
+                    <p>Services Go Here</p>
+                </div>
+
+                <div className="quote">
+                    <p>Quote Here</p>
+                </div>
             </div>
         )
     }

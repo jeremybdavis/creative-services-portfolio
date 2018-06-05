@@ -13,13 +13,27 @@ h3 {
     text-align: center;
 }
 
-.nav-bg {
-    background-color: #001641;
-    height: 60px;
-    margin-bottom: 30px;
-    position: relative;
-    top: 0;
-    width: 100%;
+.blog .hero {
+    justify-content: center;
+}
+
+.blog .hero h1 {
+    color: #e05929;
+    text-align: center;
+}
+
+.blog .hero-content {
+    text-align: center;
+}
+
+.blog-posts {
+    padding: 20px;
+}
+
+.blog-posts .post {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
 @media (min-width: 768px) {
@@ -27,15 +41,24 @@ h3 {
         font-size: 56px;
     }
 
-    .nav-bg {
-        height: 80px;
-        margin-bottom: 40px;
-    }
-}
-
-@media (min-width: 988px) {
     .blog-posts {
         display: flex;
         flex-wrap: wrap;
+        padding: 30px;
+    }
+
+    .blog-posts .post {
+        border: 10px solid #ede9e6;
+        flex-basis: 50%;
+    }
+
+    .blog-posts .post-img {
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-posts .post {
+        flex-basis: 33.3333%;
     }
 }
