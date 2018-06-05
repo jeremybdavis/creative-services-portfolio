@@ -48,6 +48,20 @@ const portfolioQuery = `
 }
 `
 
+const servicesQuery = `
+{
+    allWordpressWpServices{
+        edges{
+            node{
+                id
+                title
+                slug
+            }
+        }
+    }
+}
+`
+
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators;
@@ -126,6 +140,29 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                             createPage({
                                 path: `/portfolio/${edge.node.slug}/`,
                                 component: slash(caseStudyTemplate),
+                                context: {
+                                    id: edge.node.id,
+                                },
+                            });
+                        });
+                        resolve();
+                    });
+            })
+
+            .then(() => {
+                graphql(servicesQuery)
+                    .then(result => {
+                        if (result.errors) {
+                            console.log(result.errors);
+                            reject(result.errors);
+                        }
+
+                        const serviceTemplate = path.resolve("./src/templates/service.js");
+
+                        _.each(result.data.allWordpressWpServices.edges, edge => {
+                            createPage({
+                                path: `/services/${edge.node.slug}/`,
+                                component: slash(serviceTemplate),
                                 context: {
                                     id: edge.node.id,
                                 },
