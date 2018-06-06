@@ -10,12 +10,12 @@ class IndexPage extends Component {
         const posts = data.allWordpressPost
 
         return(
-            <div>
+            <div className="home">
                 <div className="hero">
                     <img src={acfFields.home_hero_bg_img.source_url} alt="Hero Image"/>
                     <div className="hero-content">
                         <h1>{acfFields.home_hero_headline}</h1>
-                        <h2>{acfFields.home_hero_tagline}</h2>
+                        <p>{acfFields.home_hero_tagline}</p>
                     </div>
                 </div>
 

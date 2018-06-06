@@ -5,7 +5,9 @@ import logo from './logo.png';
 
 class Header extends Component {
     navToggle() {
+        let bars = document.querySelector('.bars');
         let nav = document.querySelector('.mobile-links');
+        bars.classList.toggle('toggled');
         nav.classList.toggle('toggled');
     }
 

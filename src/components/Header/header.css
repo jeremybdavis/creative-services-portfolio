@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
+
+.bars:focus {
+    outline: 0;
+}
+
 .bars {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 24px 20px;
+    padding: 18px 20px;
     position: absolute;
     right: 0;
     top: 0;
@@ -20,6 +25,10 @@
     width: 22px;
 }
 
+.bars.toggled .icon-bar {
+    background-color: #001641;
+}
+
 .bars .icon-bar:nth-of-type(2), 
 .bars .icon-bar:nth-of-type(3) {
     top: 0;
@@ -27,6 +36,24 @@
 
 .bars .icon-bar+.icon-bar {
     margin-top: 4px;
+}
+
+.bars.toggled .icon-bar:nth-of-type(1) {
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+    top: 6px;
+}
+
+.bars.toggled .icon-bar:nth-of-type(2) {
+    -webkit-transform: rotate(330deg);
+    transform: rotate(330deg);
+    background-color: transparent;
+}
+
+.bars.toggled .icon-bar:nth-of-type(3) {
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    top: -6px;
 }
 
 .logo,
@@ -70,7 +97,7 @@
 .nav-primary {
     background-color: #001641;
     font-family: 'Arimo', sans-serif;
-    height: 60px;
+    height: 50px;
     padding: 0 20px;
     position: relative;
     text-transform: uppercase;
@@ -89,6 +116,7 @@
 
     .links-right a {
         color: #fff;
+        font-size: 14px;
         padding: 0 14px;
         transition: all .3s ease-in-out;
     }
@@ -108,15 +136,28 @@
     .nav-primary {
         align-items: center;
         display: flex;
-        height: 80px;
+        height: 60px;
         justify-content: flex-end;
     }
 
     .nav-primary .logo {
         margin-right: auto;
+        padding: 5px 0;
     }
 
     .nav-sm {
         display: none;
+    }
+}
+
+@media (min-width: 988px) {
+    .nav-lg {
+        margin-right: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .nav-lg {
+        margin-right: 40px;
     }
 }
