@@ -6,21 +6,22 @@ import './templates.css'
 class PortfolioTemplate extends Component {
     render() {
         const data = this.props.data;
+        const acfFields = data.wordpressAcfPages.acf;
 
         return(
             <div>
-                <div className="nav-bg"></div>
-                <h1>Portfolio</h1>
+                <div className="hero">
+                    <div className="hero-content">
+                        <h1>{acfFields.case_studies_headline}</h1>
+                        <p dangerouslySetInnerHTML={{__html: acfFields.case_studies_description}}></p>
+                    </div>
+                </div>
 
                 {data.allWordpressWpCaseStudy.edges.map(({node}) => (
                     <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
                         <Link to={`/portfolio/${node.slug}/`}>
-                            <h3>{node.title}</h3>
+                            <p>{node.title}</p>
                         </Link>
-
-                        <div className={"post-content"} dangerouslySetInnerHTML={{__html: node.excerpt}} />
-
-                        {node.date}
                     </div>
                 ))}
 
@@ -44,8 +45,17 @@ export const pageQuery = graphql`
                     id
                     title
                     slug
-                    date(formatString: "MMMM DD, YYYY")
+                    featured_media{
+                        source_url
+                    }
                 }
+            }
+        }
+
+        wordpressAcfPages{
+            acf{
+                case_studies_headline
+                case_studies_description
             }
         }
     }

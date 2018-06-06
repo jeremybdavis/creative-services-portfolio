@@ -1,0 +1,71 @@
+.services {
+    background-color: #00548B;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service:nth-child(odd) {
+    background-color: #2F6B9C;
+}
+
+.service:nth-child(even) {
+    background-color: #668BB2;
+}
+
+.service {
+    background-color: #2F6B9C;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.service a {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px 15px;
+    transition: all .3s ease-in-out;
+}
+
+.service a:hover {
+    opacity: .6;
+}
+
+.quote {
+    color: #58514a;
+    font-family: 'Domine', serif;
+    font-size: 24px;
+}
+
+@media (min-width: 768px) and (max-width: 988px) {
+    .service {
+        flex-basis: 50%;
+    }
+
+    .service:nth-child(1) {
+        order: 1;
+    }
+
+    .service:nth-child(2) {
+        background-color: #668BB2;
+        order: 2;
+    }
+
+    .service:nth-child(3) {
+        order: 4;
+    }
+
+    .service:nth-child(4) {
+        background-color: #668BB2;
+        order: 3;
+    }
+
+    .service:nth-child(5) {
+        order: 4;
+    }
+}
+
+@media (min-width: 988px) {
+    .service {
+        flex-basis: 33.3333%;
+    }
+}

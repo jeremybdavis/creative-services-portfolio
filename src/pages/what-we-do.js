@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Link from 'gatsby-link'
 import './pages.css'
+import './what-we-do.css'
 
 class WhatWeDoPage extends Component {
     render() {
@@ -17,21 +18,19 @@ class WhatWeDoPage extends Component {
                     </div>
                 </div>
 
-                <div className="services-container">
-                    <div className="services">
-                        {services.edges.map(({node}) => (
-                            <div key={node.slug} className="service">
-                                <p className="service-name">{node.title}</p>
-                                <p className="service-excerpt">{node.acf.service_excerpt}</p>
-                                <Link to={`/services/${node.slug}`}>
-                                    Learn More
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
+                <div className="services">
+                    {services.edges.map(({node}) => (
+                        <div key={node.slug} className="service">
+                            <p className="service-name">{node.title}</p>
+                            <p className="service-excerpt">{node.acf.service_excerpt}</p>
+                            <Link to={`/services/${node.slug}`}>
+                                Learn More
+                            </Link>
+                        </div>
+                    ))}
                 </div>
 
-                <div className="quote-container">
+                <div className="section" style={{backgroundColor: '#ede9e6'}}>
                     <p className="quote">{acfFields.what_we_do_quote}</p>
                     <p className="quote-name">{acfFields.wwd_quote_name}</p>
                     <p className="quote-title">{acfFields.wwd_quote_title}</p>
