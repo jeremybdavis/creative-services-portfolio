@@ -26,10 +26,6 @@ h3 {
     text-align: center;
 }
 
-.blog-posts {
-    padding: 20px;
-}
-
 .blog-posts .post {
     background-color: #fff;
     margin-bottom: 20px;
@@ -44,7 +40,6 @@ h3 {
     .blog-posts {
         display: flex;
         flex-wrap: wrap;
-        padding: 30px;
     }
 
     .blog-posts .post {

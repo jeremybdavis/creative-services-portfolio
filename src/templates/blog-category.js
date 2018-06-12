@@ -33,7 +33,7 @@ class PostsTemplate extends Component {
                                 ))}
                             </ul>
                     </div>
-                    <div className="blog-posts">
+                    <div id="posts" className="blog-posts">
                         {data.allWordpressPost.edges.map(({node}) => (
                             <div key={node.slug} className={"post"}>
                                 <Link to={`/blog/${node.slug}/`}>
@@ -66,24 +66,29 @@ PostsTemplate.propTypes = {
 export default PostsTemplate
 
 export const pageQuery = graphql`
-    query postsQuery{
-        allWordpressPost{
-            edges{
-                node{
-                    id
-                    title
-                    excerpt
-                    slug
-                    date(formatString: "MMMM DD, YYYY")
-                    featured_media{
-                        source_url
-                    }
-                    categories{
-                        name
-                    }
-                }
+    query categoryQuery($id: String!){
+        allWordpressPost(filter:{
+            categories: {
+              id: {
+                eq: $id
+              }
             }
-        }
+          }, 
+            sort: {
+              order: ASC, 
+              fields: [date]
+            }) {
+            edges {
+              node {
+                id
+                title
+                content
+                featured_media{
+                    source_url
+                }
+              }
+            }
+          }
 
         wordpressAcfPages {
             acf {

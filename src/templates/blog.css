@@ -1,0 +1,22 @@
+.blog-posts h3 {
+    text-align: left;
+}
+
+.post-content a {
+    margin-top: 10px;
+}
+
+.post-content p {
+    margin-bottom: 0;
+}
+
+@media (min-width: 1400px) {
+    .blog-posts h3,
+    .post-content {
+        padding: 0 15px;
+    }
+
+    .blog .section {
+        padding: 60px 80px;
+    }
+}

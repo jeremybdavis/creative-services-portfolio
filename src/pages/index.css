@@ -3,7 +3,8 @@
 .btn {
     background-color: #e05929;
     color: #fff;
-    padding: 15px 30px;
+    font-size: 16px;
+    padding: 12px 25px;
     transition: all .3s ease-in-out;
 }
 
@@ -118,7 +119,6 @@
 
 .section {
     padding: 40px 20px;
-    text-align: center;
 }
 
 .section h2 {
@@ -148,6 +148,10 @@
 
     .section.case-studies {
         padding: 60px 0 0;
+    }
+
+    .home-blog {
+        margin-bottom: 60px;
     }
 
     .home-blog .post {
@@ -200,6 +204,7 @@
 
     .post-img {
         height: 160px;
+        margin-bottom: 15px;
     }
 
     .post a:hover .post-hover {

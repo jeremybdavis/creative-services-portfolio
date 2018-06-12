@@ -62,6 +62,20 @@ const servicesQuery = `
 }
 `
 
+const categoryQuery = `
+{
+    allWordpressCategory{
+        edges{
+            node{
+                id
+                name
+                slug
+            }
+        }
+    }
+}
+`
+
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators;
@@ -170,7 +184,32 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                         });
                         resolve();
                     });
+            })
+
+            .then(() => {
+                graphql(categoryQuery)
+                    .then(result => {
+                        if (result.errors) {
+                            console.log(result.errors);
+                            reject(result.errors);
+                        }
+
+                        const categoryTemplate = path.resolve("./src/templates/blog-category.js");
+
+                        _.each(result.data.allWordpressCategory.edges, edge => {
+                            createPage({
+                                path: `/blog/${edge.node.slug}/`,
+                                component: slash(categoryTemplate),
+                                context: {
+                                    id: edge.node.id,
+                                },
+                            })
+                        });
+                        resolve();
+                    });
             });
+
+
         // ==== END POSTS ====
     });
 };

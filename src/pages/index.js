@@ -5,6 +5,7 @@ import './index.css'
 class IndexPage extends Component {
     render() {
         const data = this.props.data
+        console.log(data)
         const acfFields = data.wordpressAcfPages.acf
         const caseStudies = data.allWordpressWpCaseStudy
         const posts = data.allWordpressPost
