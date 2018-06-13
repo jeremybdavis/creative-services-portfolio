@@ -9,6 +9,13 @@ class PostsTemplate extends Component {
         console.log(e.target.dataset.id);
     }
 
+    catToggle() {
+        let toggle = document.querySelector('.cat-select');
+        let catList = document.querySelector('.cat-list');
+        toggle.classList.toggle('toggled');
+        catList.classList.toggle('toggled');
+    }
+
     render() {
         const data = this.props.data;
         const acfFields = data.wordpressAcfPages.acf;
@@ -22,10 +29,12 @@ class PostsTemplate extends Component {
                         <h3>{acfFields.blog_subheadline}</h3>
                     </div>
                 </div>
-                <div className="section" style={{backgroundColor: '#ede9e6'}}>
+                <div id="posts" className="section" style={{backgroundColor: '#ede9e6'}}>
                     <div className="filter">
                             <p>Filter:</p>
-                            <ul>
+                            <p className="cat-select" onClick={this.catToggle}>Categories</p>
+                            <ul className="cat-list">
+                                <li><Link to={`/blog/#posts`}>All Posts</Link></li>
                                 {categories.edges.map(({node}) => (
                                     <li key={node.id} data-id={node.id} onClick={this.catSelect}>
                                         <Link to={`/blog/${node.slug}/#posts`}>{node.name}</Link>

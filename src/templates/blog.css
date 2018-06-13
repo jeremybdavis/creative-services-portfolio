@@ -2,6 +2,32 @@
     text-align: left;
 }
 
+.cat-select,
+.cat-list a {
+    color: #2F6B9C;
+    cursor: pointer;
+}
+
+.filter p {
+    display: inline-block;
+}
+
+.cat-list {
+    background-color: #ede9e6;
+    height: 0px;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 30px;
+    position: absolute;
+    transition: all .3s ease;
+    z-index: 1;
+}
+
+.cat-list.toggled {
+    height: 280px;
+}
+
 .post-content a {
     margin-top: 10px;
 }
