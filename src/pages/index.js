@@ -23,7 +23,7 @@ class IndexPage extends Component {
                 <div className="section who-we-are">
                     <div className="content">
                         <h2>{acfFields.home_about_headline}</h2>
-                        <div dangerouslySetInnerHTML={{__html: acfFields.home_about_content}}/>
+                        <div style={{marginBottom: '30px'}} dangerouslySetInnerHTML={{__html: acfFields.home_about_content}}/>
                         <Link to="/what-we-do/" className="btn">View More</Link>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ class IndexPage extends Component {
                                     </div>
                                     <h3 dangerouslySetInnerHTML={{__html: node.title}}></h3>
                                 </Link>
-                                <p dangerouslySetInnerHTML={{__html: node.excerpt}}></p>
+                                <div className="excerpt" dangerouslySetInnerHTML={{__html: node.excerpt}}></div>
                                 <Link to={`/blog/${node.slug}/`} className="view-post">View Post</Link>
                             </div>
                         ))}

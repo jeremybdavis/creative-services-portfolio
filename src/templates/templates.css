@@ -13,25 +13,6 @@ h3 {
     text-align: center;
 }
 
-.blog .hero {
-    justify-content: center;
-}
-
-.blog .hero h1 {
-    color: #e05929;
-    text-align: center;
-}
-
-.blog .hero-content {
-    text-align: center;
-}
-
-.blog-posts .post {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
 @media (min-width: 768px) {
     h1 {
         font-size: 56px;

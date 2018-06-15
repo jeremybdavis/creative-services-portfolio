@@ -26,7 +26,7 @@ class PostsTemplate extends Component {
                 <div className="hero">
                     <div className="hero-content">
                         <h1>Blog</h1>
-                        <h3>{acfFields.blog_subheadline}</h3>
+                        <p className="subhead">{acfFields.blog_subheadline}</p>
                     </div>
                 </div>
                 <div id="posts" className="section" style={{backgroundColor: '#ede9e6'}}>

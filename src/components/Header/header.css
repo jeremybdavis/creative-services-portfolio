@@ -116,7 +116,8 @@
 
     .links-right a {
         color: #fff;
-        font-size: 14px;
+        font-size: 12px;
+        letter-spacing: .5px;
         padding: 0 14px;
         transition: all .3s ease-in-out;
     }
