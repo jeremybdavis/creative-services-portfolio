@@ -32,7 +32,7 @@ class WhatWeDoPage extends Component {
 
                 <div className="section" style={{backgroundColor: '#ede9e6'}}>
                     <p className="quote">{acfFields.what_we_do_quote}</p>
-                    <p className="quote-name">{acfFields.wwd_quote_name}</p>
+                    <p className="quote-name">- {acfFields.wwd_quote_name}</p>
                     <p className="quote-title">{acfFields.wwd_quote_title}</p>
                 </div>
             </div>

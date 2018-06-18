@@ -39,7 +39,9 @@ p {
     align-items: center;
     display: flex;
     height: 500px;
+    justify-content: center;
     position: relative;
+    text-align: center;
     top: 0;
 }
 
@@ -48,7 +50,7 @@ p {
     font-family: 'Domine', serif;
     font-size: 52px;
     font-weight: 400;
-    text-align: left;
+    text-align: center;
 }
 
 .hero img {
@@ -62,10 +64,15 @@ p {
     color: #58514a;
 }
 
+.home .hero {
+    text-align: left;
+}
+
 .home .hero h1 {
     border-bottom: 2px solid #e05929;
     margin-bottom: 25px;
     padding-bottom: 20px;
+    text-align: left;
 }
 
 .hero-content {

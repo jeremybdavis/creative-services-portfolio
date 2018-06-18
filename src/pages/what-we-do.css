@@ -15,7 +15,7 @@
 
 .service {
     background-color: #2F6B9C;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
@@ -30,10 +30,40 @@
     opacity: .6;
 }
 
-.quote {
+.section .quote {
     color: #58514a;
     font-family: 'Domine', serif;
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+.service p {
+    color: #fff;
+}
+
+.service-name {
+    font-family: 'Domine', serif;
+    font-size: 20px;
+}
+
+.service-excerpt {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.quote-name {
+    border-top: 2px solid #e05929;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 20px;
+    padding: 20px 40px 0;
+}
+
+.wwd .hero-content {
+    max-width: 565px;
+    padding: 0 20px;
 }
 
 @media (min-width: 768px) and (max-width: 988px) {
@@ -64,8 +94,46 @@
     }
 }
 
+@media (min-width: 768px) {
+    .section .quote {
+        font-size: 24px;
+        line-height: 32px;
+        max-width: 560px;
+    }
+}
+ 
 @media (min-width: 988px) {
     .service {
         flex-basis: 33.3333%;
+    }
+
+    .services {
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .services {
+        padding: 0 60px;
+    }
+
+    .service {
+        padding: 40px;
+    }
+
+    .section .quote {
+        font-size: 28px;
+        line-height: 34px;
+        max-width: 660px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .services {
+        padding: 0 80px;
+    }
+
+    .service {
+        padding: 60px;
     }
 }
