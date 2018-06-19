@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import './templates.css'
+import './portfolio.css'
 
 class PortfolioTemplate extends Component {
     render() {
@@ -9,22 +10,31 @@ class PortfolioTemplate extends Component {
         const acfFields = data.wordpressAcfPages.acf;
 
         return(
-            <div>
+            <div className="portfolio">
                 <div className="hero">
                     <div className="hero-content">
                         <h1>{acfFields.case_studies_headline}</h1>
-                        <p dangerouslySetInnerHTML={{__html: acfFields.case_studies_description}}></p>
+                        <div dangerouslySetInnerHTML={{__html: acfFields.case_studies_description}}></div>
                     </div>
                 </div>
 
-                {data.allWordpressWpCaseStudy.edges.map(({node}) => (
-                    <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
-                        <Link to={`/portfolio/${node.slug}/`}>
-                            <p>{node.title}</p>
-                        </Link>
+                <div className="section" style={{backgroundColor: '#ede9e6'}}>
+                    <div className="posts">
+                        {data.allWordpressWpCaseStudy.edges.map(({node}) => (
+                            <div key={node.slug} className={"post"}>
+                                <Link to={`/portfolio/${node.slug}/`}>
+                                    <div className="post-img">
+                                        <img src={node.featured_media.source_url} alt=""/>
+                                        <div className="cs-hover">
+                                            <span>View Project</span>
+                                        </div>
+                                    </div>
+                                    <p className="post-title" dangerouslySetInnerHTML={{__html: node.title}}></p>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
-                ))}
-
+                </div>
             </div>
         )
     }
