@@ -80,6 +80,7 @@ p {
 }
 
 .home .hero-content {
+    left: 0;
     padding: 0 25px;
 }
 
