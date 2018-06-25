@@ -45,9 +45,12 @@ export default WhatWeDoPage
 export const servicesPageQuery = graphql`
   query servicesPageQuery{
 
-    allWordpressWpServices{
-        edges{
-            node{
+    allWordpressWpServices(sort:{
+        order:ASC,
+        fields: [slug]
+    }) {
+        edges {
+            node {
                 slug
                 title
                 acf{

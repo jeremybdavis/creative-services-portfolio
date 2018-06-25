@@ -11,6 +11,7 @@
 .post a {
     color: #001641;
     display: block;
+    text-align: left;
 }
 
 .post h3 {
@@ -19,6 +20,17 @@
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 5px;
+    text-align: left;
+}
+
+.post .excerpt p {
+    text-align: left;
+}
+
+.divider {
+    border: 1px solid #e05929;
+    margin: 25px auto;
+    max-width: 350px;
 }
 
 .home-blog .post p {
@@ -33,6 +45,10 @@ p {
 
 .post-img {
     position: relative;
+}
+
+.section .post-content p {
+    text-align: left;
 }
 
 .hero {
@@ -59,6 +75,10 @@ p {
     object-fit: cover;
 }
 
+.hero p {
+    font-size: 14px;
+}
+
 .home .hero h1,
 p {
     color: #58514a;
@@ -76,7 +96,13 @@ p {
 }
 
 .hero-content {
+    max-width: 500px;
+    padding: 0 10px;
     position: absolute;
+}
+
+.hero .hero-headline {
+    font-size: 24px;
 }
 
 .home .hero-content {
@@ -117,10 +143,6 @@ p {
 
 .link-more {
     display: none;
-}
-
-.post h3 {
-    text-align: center;
 }
 
 .post-hover {
@@ -272,6 +294,10 @@ p {
 }
 
 @media (min-width: 988px) {
+    .hero-content {
+        max-width: 615px;;
+    }
+
     .post-hover span {
         font-size: 22px;
     }
@@ -303,9 +329,5 @@ p {
 
     .latest-work {
         margin: 0 auto;
-    }
-
-    .post .excerpt {
-        padding: 0 5%;
     }
 }

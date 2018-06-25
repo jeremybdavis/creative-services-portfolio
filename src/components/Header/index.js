@@ -22,7 +22,6 @@ class Header extends Component {
 
                 <div className="nav-lg">
                     <div className="links-right">
-                        <Link to="/about">About</Link>
                         <Link to="/what-we-do">What We Do</Link>
                         <Link to="/portfolio">Case Studies</Link>
                         <Link to="/blog/">Blog</Link>

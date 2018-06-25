@@ -179,6 +179,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                                 component: slash(serviceTemplate),
                                 context: {
                                     id: edge.node.id,
+                                    slug: edge.node.slug,
                                 },
                             });
                         });

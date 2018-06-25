@@ -21,6 +21,8 @@ h3 {
     .blog-posts {
         display: flex;
         flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1300px;
     }
 
     .blog-posts .post {
