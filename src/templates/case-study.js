@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import './templates.css'
+import './case-study.css'
 
 class CaseStudyTemplate extends Component {
     render() {
@@ -20,56 +21,67 @@ class CaseStudyTemplate extends Component {
 
                 {caseStudy.acf.cs_intro_headline &&
                     <div className="section" style={{backgroundColor: '#ede9e6'}}>
-                        <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_intro_headline}}></p>
-                        {caseStudy.acf.cs_intro_content && 
-                            <div className="cs-content">
-                                {caseStudy.acf.cs_intro_content}
-                            </div>
-                        }
+                        <div className="cs-container">
+                                <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_intro_headline}}></p>
+                                {caseStudy.acf.cs_intro_content && 
+                                    <div className="cs-content" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_intro_content}}></div>
+                                }
 
-                        {caseStudy.acf.cs_intro_img.source_url &&
-                            <div className="cs-img">
-                                <img src={caseStudy.acf.cs_intro_img.source_url} alt=""/>
-                            </div>
-                        }
+                                {caseStudy.acf.cs_intro_img.source_url &&
+                                    <div className="cs-img">
+                                        <img src={caseStudy.acf.cs_intro_img.source_url} alt=""/>
+                                    </div>
+                                }
+                        </div>
                     </div>
                 }
 
                 {caseStudy.acf.cs_goals_headline &&
                     <div className="section">
-                        <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_headline}}></p>
-                        <p dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_content}}></p>
-                        {caseStudy.acf.cs_goals_repeater.map(a => a.cs_goal) &&
-                            <ul className="cs-goals">
-                                <li dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_repeater.map(a => a.cs_goal)}}></li>
-                            </ul>
-                        }
+                        <div className="cs-container">
+                            <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_headline}}></p>
+                            <p dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_content}}></p>
+                            {caseStudy.acf.cs_goals_repeater.map(a => a.cs_goal) &&
+                                <ul className="cs-goals">
+                                    {caseStudy.acf.cs_goals_repeater.map(function(a) {
+                                        return (
+                                            <li dangerouslySetInnerHTML={{__html: a.cs_goal}}></li>
+                                        )
+                                    })}
+                                    
+                                </ul>
+                            }
+                        </div>
                     </div>
                 }
 
                 {caseStudy.acf.cs_results_headline &&
                     <div className="section" style={{backgroundColor: '#ede9e6'}}>
-                        {caseStudy.acf.cs_results_img.source_url &&
-                            <div className="cs-img">
-                                <img src={caseStudy.acf.cs_results_img.source_url} alt=""/>
-                            </div>
-                        }
-                        <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_results_headline}}></p>
-                        {caseStudy.acf.cs_results_content && 
-                            <div className="cs-content">{caseStudy.acf.cs_results_content}</div>
-                        }
+                        <div className="cs-container">
+                            {caseStudy.acf.cs_results_img.source_url &&
+                                <div className="cs-img">
+                                    <img src={caseStudy.acf.cs_results_img.source_url} alt=""/>
+                                </div>
+                            }
+                            <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_results_headline}}></p>
+                            {caseStudy.acf.cs_results_content && 
+                                <div className="cs-content" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_results_content}}></div>
+                            }
+                        </div>
                     </div>
                 }
 
                 {caseStudy.acf.cs_quote &&
                     <div className="section">
-                        <p className="quote" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote}}></p>
-                        {caseStudy.acf.cs_quote_name &&
-                            <p className="quote-name" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote_name}}></p>
-                        }
-                        {caseStudy.acf.cs_quote_title &&
-                            <p className="quote-name" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote_title}}></p>
-                        }
+                        <div className="cs-container">
+                            <p className="quote" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote}}></p>
+                            {caseStudy.acf.cs_quote_name &&
+                                <p className="quote-name" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote_name}}></p>
+                            }
+                            {caseStudy.acf.cs_quote_title &&
+                                <p className="quote-title" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote_title}}></p>
+                            }
+                        </div>
                     </div>
                 }
             </div>

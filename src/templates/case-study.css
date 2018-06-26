@@ -1,0 +1,48 @@
+.case-study .hero h1 {
+    color: #fff;
+}
+
+.case-study .section p {
+    text-align: left;
+}
+
+.cs-container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.case-study .headline {
+    color: #001641;
+    font-family: 'Domine', serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.cs-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.cs-goals {
+    text-align: left;
+}
+
+.case-study .section .quote-title {
+    text-align: center;
+}
+
+@media (min-width: 988px) {
+    .cs-content p {
+        flex-basis: 50%;
+    }
+
+    .cs-content p:nth-child(odd) {
+        padding-right: 10px;
+    }
+
+    .cs-content p:nth-child(even) {
+        padding-left: 10px;
+    }
+}
