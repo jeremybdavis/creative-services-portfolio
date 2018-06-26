@@ -8,10 +8,70 @@ class CaseStudyTemplate extends Component {
         const caseStudy = this.props.data.wordpressWpCaseStudy
 
         return (
-            <div>
-                <div className="nav-bg"></div>
-                <h1 dangerouslySetInnerHTML={{ __html: caseStudy.title }} />
-                <div dangerouslySetInnerHTML={{ __html: caseStudy.content }} />
+            <div className="case-study">
+                <div className="hero">
+                    {caseStudy.acf.cs_hero_img.source_url &&
+                        <img src={caseStudy.acf.cs_hero_img.source_url} alt=""/>
+                    }
+                    <div className="hero-content">
+                        <h1 dangerouslySetInnerHTML={{ __html: caseStudy.title }} />
+                    </div>
+                </div>
+
+                {caseStudy.acf.cs_intro_headline &&
+                    <div className="section" style={{backgroundColor: '#ede9e6'}}>
+                        <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_intro_headline}}></p>
+                        {caseStudy.acf.cs_intro_content && 
+                            <div className="cs-content">
+                                {caseStudy.acf.cs_intro_content}
+                            </div>
+                        }
+
+                        {caseStudy.acf.cs_intro_img.source_url &&
+                            <div className="cs-img">
+                                <img src={caseStudy.acf.cs_intro_img.source_url} alt=""/>
+                            </div>
+                        }
+                    </div>
+                }
+
+                {caseStudy.acf.cs_goals_headline &&
+                    <div className="section">
+                        <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_headline}}></p>
+                        <p dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_content}}></p>
+                        {caseStudy.acf.cs_goals_repeater.map(a => a.cs_goal) &&
+                            <ul className="cs-goals">
+                                <li dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_goals_repeater.map(a => a.cs_goal)}}></li>
+                            </ul>
+                        }
+                    </div>
+                }
+
+                {caseStudy.acf.cs_results_headline &&
+                    <div className="section" style={{backgroundColor: '#ede9e6'}}>
+                        {caseStudy.acf.cs_results_img.source_url &&
+                            <div className="cs-img">
+                                <img src={caseStudy.acf.cs_results_img.source_url} alt=""/>
+                            </div>
+                        }
+                        <p className="headline" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_results_headline}}></p>
+                        {caseStudy.acf.cs_results_content && 
+                            <div className="cs-content">{caseStudy.acf.cs_results_content}</div>
+                        }
+                    </div>
+                }
+
+                {caseStudy.acf.cs_quote &&
+                    <div className="section">
+                        <p className="quote" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote}}></p>
+                        {caseStudy.acf.cs_quote_name &&
+                            <p className="quote-name" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote_name}}></p>
+                        }
+                        {caseStudy.acf.cs_quote_title &&
+                            <p className="quote-name" dangerouslySetInnerHTML={{__html: caseStudy.acf.cs_quote_title}}></p>
+                        }
+                    </div>
+                }
             </div>
         )
     }
@@ -25,6 +85,29 @@ export const pageQuery = graphql`
         wordpressWpCaseStudy(id: { eq: $id }) {
             title
             content
+            acf{
+                cs_hero_img{
+                    source_url
+                }
+                cs_intro_headline
+                cs_intro_content
+                cs_intro_img{
+                  source_url
+                }
+                cs_goals_headline
+                cs_goals_content
+                cs_goals_repeater{
+                  cs_goal
+                }
+                cs_results_img{
+                  source_url
+                }
+                cs_results_headline
+                cs_results_content
+                cs_quote
+                cs_quote_name
+                cs_quote_title
+            }
         }
         site {
             siteMetadata {
