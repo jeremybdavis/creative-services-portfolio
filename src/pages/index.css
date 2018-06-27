@@ -123,6 +123,14 @@ p {
     padding: 8px 8px 20px;
 }
 
+.home .who-we-are {
+    position: relative;
+}
+
+.home .who-we-are img {
+    display: none;
+}
+
 .latest-work img {
     height: 100%;
     margin-bottom: 0;
@@ -217,6 +225,14 @@ p {
         margin-left: 15%;
     }
 
+    .home .who-we-are img {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
     .latest-work .post {
         height: 300px;
     }
@@ -291,6 +307,9 @@ p {
     .who-we-are .content {
         margin: 0 auto;
         max-width: 425px;
+        padding-top: 80px;
+        position: relative;
+        z-index: 1;
     }
 }
 
@@ -307,6 +326,10 @@ p {
         height: 220px;
         margin-bottom: 25px;
     }
+
+    .who-we-are .content {
+        padding-top: 100px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -316,6 +339,15 @@ p {
 
     .post-img {
         height: 260px;
+    }
+
+    .home .who-we-are img {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .who-we-are .content {
+        padding-top: 120px;
     }
 }
 

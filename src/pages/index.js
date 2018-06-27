@@ -5,15 +5,15 @@ import './index.css'
 class IndexPage extends Component {
     render() {
         const data = this.props.data
-        console.log(data)
         const acfFields = data.wordpressAcfPages.acf
+        console.log(data)
         const caseStudies = data.allWordpressWpCaseStudy
         const posts = data.allWordpressPost
 
         return(
             <div className="home">
                 <div className="hero">
-                    <img src={acfFields.home_hero_bg_img.source_url} alt="Hero Image"/>
+                    <img src={acfFields.home_hero_bg_img.source_url} alt=""/>
                     <div className="hero-content">
                         <h1>{acfFields.home_hero_headline}</h1>
                         <p>{acfFields.home_hero_tagline}</p>
@@ -21,6 +21,7 @@ class IndexPage extends Component {
                 </div>
 
                 <div className="section who-we-are">
+                    <img src={acfFields.home_about_bg_img.source_url} alt=""/>
                     <div className="content">
                         <h2>{acfFields.home_about_headline}</h2>
                         <div style={{marginBottom: '30px'}} dangerouslySetInnerHTML={{__html: acfFields.home_about_content}}/>
@@ -81,6 +82,9 @@ export const homePageQuery = graphql`
         home_hero_headline
         home_hero_tagline
         home_hero_bg_img{
+            source_url
+        }
+        home_about_bg_img{
             source_url
         }
         home_about_headline
