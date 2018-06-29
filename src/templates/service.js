@@ -13,6 +13,9 @@ class ServiceTemplate extends Component {
         return (
             <div className="service-page">
                 <div className="hero">
+                    {service.acf.service_hero_image.source_url &&
+                        <img src={service.acf.service_hero_image.source_url} alt="" className="hero-icon-arc"/>
+                    }
                     <div className="hero-content">
                         <h1 dangerouslySetInnerHTML={{ __html: service.title}} />
                         {service.acf.service_headline &&
@@ -94,6 +97,9 @@ export const pageQuery = graphql`
             title
             content
             acf {
+                service_hero_image{
+                    source_url
+                }
                 service_headline
                 service_description
                 service_repeater{

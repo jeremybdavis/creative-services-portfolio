@@ -61,8 +61,12 @@
     padding: 20px 40px 0;
 }
 
+.wwd .hero img {
+    display: none;
+}
+
 .wwd .hero-content {
-    max-width: 565px;
+    max-width: 585px;
     padding: 0 20px;
 }
 
@@ -100,6 +104,18 @@
         line-height: 32px;
         max-width: 560px;
     }
+
+    .wwd .hero img {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .wwd .hero-content {
+        padding: 0 20px 40px;
+    }
 }
  
 @media (min-width: 988px) {
@@ -125,6 +141,10 @@
         font-size: 28px;
         line-height: 34px;
         max-width: 660px;
+    }
+
+    .wwd .hero-content {
+        padding: 0 20px 60px;
     }
 }
 

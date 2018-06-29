@@ -8,8 +8,7 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost
 
     return (
-      <div>
-        <div className="nav-bg"></div>
+      <div className="section blog-post">
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>

@@ -13,6 +13,15 @@ h3 {
     text-align: center;
 }
 
+.section.blog-post p {
+    text-align: left;
+    font-size: 18px;
+}
+
+.section.blog-post {
+    min-height: 100vh;
+}
+
 @media (min-width: 768px) {
     h1 {
         font-size: 56px;

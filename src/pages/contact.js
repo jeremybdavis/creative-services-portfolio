@@ -6,7 +6,6 @@ class ContactPage extends Component {
 
         return (
             <div>
-                <div className="nav-bg"></div>
                 <h1>Contact Page</h1>
             </div>
         )

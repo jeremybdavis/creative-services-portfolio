@@ -1,3 +1,11 @@
+.case-study .hero {
+    align-items: center;
+}
+
+.case-study .hero-content {
+    padding-bottom: 0;
+}
+
 .case-study .hero h1 {
     color: #fff;
 }

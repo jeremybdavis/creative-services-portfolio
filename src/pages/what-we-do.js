@@ -12,6 +12,9 @@ class WhatWeDoPage extends Component {
         return (
             <div className="wwd">
                 <div className="hero">
+                    {acfFields.what_we_do_hero_image.source_url &&
+                        <img src={acfFields.what_we_do_hero_image.source_url} className="hero-icon-arc" alt=""/>
+                    }
                     <div className="hero-content">
                         <h1>{acfFields.what_we_do_headline}</h1>
                         <p>{acfFields.what_we_do_description}</p>
@@ -62,6 +65,9 @@ export const servicesPageQuery = graphql`
 
     wordpressAcfPages{
         acf{
+            what_we_do_hero_image{
+                source_url
+            }
             what_we_do_headline
             what_we_do_description
             what_we_do_quote

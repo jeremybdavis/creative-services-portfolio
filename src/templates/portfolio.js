@@ -12,6 +12,9 @@ class PortfolioTemplate extends Component {
         return(
             <div className="portfolio">
                 <div className="hero">
+                    {acfFields.case_studies_hero_image.source_url &&
+                        <img src={acfFields.case_studies_hero_image.source_url} className="hero-icon-arc" alt=""/>
+                    }
                     <div className="hero-content">
                         <h1>{acfFields.case_studies_headline}</h1>
                         <div dangerouslySetInnerHTML={{__html: acfFields.case_studies_description}}></div>
@@ -64,6 +67,9 @@ export const pageQuery = graphql`
 
         wordpressAcfPages{
             acf{
+                case_studies_hero_image{
+                    source_url
+                }
                 case_studies_headline
                 case_studies_description
             }
