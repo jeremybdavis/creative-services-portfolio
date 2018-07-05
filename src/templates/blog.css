@@ -1,4 +1,5 @@
 .blog .hero {
+    align-items: center;
     justify-content: center;
 }
 
@@ -9,6 +10,7 @@
 }
 
 .blog .hero-content {
+    padding-bottom: 0;
     text-align: center;
 }
 

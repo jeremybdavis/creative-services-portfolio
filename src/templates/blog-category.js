@@ -24,6 +24,9 @@ class PostsTemplate extends Component {
         return(
             <div className="blog">
                 <div className="hero">
+                    {acfFields.blog_hero_image.source_url &&
+                        <img src={acfFields.blog_hero_image.source_url} className="hero-icon-arc" alt="" />
+                    }
                     <div className="hero-content">
                         <h1>Blog</h1>
                         <h3>{acfFields.blog_subheadline}</h3>
@@ -101,6 +104,9 @@ export const pageQuery = graphql`
 
         wordpressAcfPages {
             acf {
+                blog_hero_image{
+                    source_url
+                }
                 blog_subheadline
             }
         }
