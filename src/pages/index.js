@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import './index.css'
+import YouTube from 'react-youtube'
 
 class IndexPage extends Component {
+    _onReady(event) {
+        // access to player in all event handlers via event.target
+        // event.target.mute();
+      }
+      
+      _onEnd(event) {
+        event.target.playVideo();
+      }
+
     render() {
         const data = this.props.data
         const acfFields = data.wordpressAcfPages.acf
@@ -10,17 +20,37 @@ class IndexPage extends Component {
         const caseStudies = data.allWordpressWpCaseStudy
         const posts = data.allWordpressPost
 
+        const videoOptions = {
+            playerVars: { // https://developers.google.com/youtube/player_parameters
+                autoplay: 1,
+                controls: 0,
+                rel: 0,
+                showinfo: 0,
+                mute: 1
+            }
+        }
+
         return(
             <div className="home">
                 <div className="hero">
-                    <img src={acfFields.home_hero_bg_img.source_url} alt=""/>
+                    <div className="video-background">
+                        <div className="video-foreground">
+                            <YouTube
+                                videoId="sH8dievol2s"
+                                opts={videoOptions}
+                                className="video-iframe"
+                                onReady={this._onReady}
+                                onEnd={this._onEnd}
+                            />
+                        </div>
+                    </div>
                     <div className="hero-content">
                         <h1>{acfFields.home_hero_headline}</h1>
                         <p>{acfFields.home_hero_tagline}</p>
                     </div>
                 </div>
 
-                <div className="section who-we-are">
+                <div className="section who-we-are" style={{backgroundColor: '#fff'}}>
                     <img src={acfFields.home_about_bg_img.source_url} alt=""/>
                     <div className="content">
                         <h2>{acfFields.home_about_headline}</h2>
@@ -29,7 +59,7 @@ class IndexPage extends Component {
                     </div>
                 </div>
 
-                <div className="section case-studies">
+                <div className="section case-studies" style={{backgroundColor: '#fff'}}>
                     <h2>{acfFields.home_portfolio_headline}</h2>
                     <div className="latest-work">
                         {caseStudies.edges.slice(-3).reverse().map(({node}) => (
